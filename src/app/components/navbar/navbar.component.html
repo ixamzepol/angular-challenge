@@ -1,0 +1,36 @@
+<body>
+<nav>
+  
+  <div class="mobile">
+    <div class="header">
+      <div class="logo"><img src="https://th.bing.com/th/id/R.e2e055ca0ebc7e59494f97dcf7ee6fac?rik=FkOBmSUg8uDVCQ&pid=ImgRaw&r=0" alt="restaurant">
+      </div>
+      <div class="options">
+          <button class="btn btn-outline-light mx-3" type="button" >Logout
+        </button>
+        <button class="btn btn-outline-light" type="button" (click)="toggle()">More
+        </button>
+      </div>
+
+    </div >
+    <div *ngIf="more" class="links">
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="desktop">
+    <div class="logo"><img src="https://th.bing.com/th/id/R.e2e055ca0ebc7e59494f97dcf7ee6fac?rik=FkOBmSUg8uDVCQ&pid=ImgRaw&r=0" alt="restaurant"></div>
+    <div class="primary">
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">
+          <button class="btn btn-dark mx-3" type="button" >Logout
+        </button>
+      </a>
+    </div>
+
+  </div>
+</nav>
+</body>

@@ -1,0 +1,44 @@
+
+    
+
+<navbar></navbar>
+<home></home>
+
+
+<div class="col-lg-6 col-md-8 mx-auto input-container">
+                <h1>Search Plates</h1>
+
+
+                <div class="input-group mt-3">
+                <input type="text" 
+                       class="form-control" 
+                       [formControl]="termino"
+                       (input)="press()"
+                       (keyup.enter)="buscar()"
+                       placeholder="Ingrese un plato a buscar...">
+                <button class="btn btn-outline-success"
+                        (click)="buscar()" 
+                        type="button">Search</button>
+                    </div>
+
+
+<div *ngIf="busqueda">
+    <div class="album py-5">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                <div class="col" *ngFor="let plato of busqueda.results">                  
+                <plate 
+                [plato]="plato"  
+                (boton)="agregar($event)" 
+                [buttonName]="buttonName"
+                [style]="style">
+                </plate>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+

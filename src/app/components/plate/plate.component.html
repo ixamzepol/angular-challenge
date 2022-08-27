@@ -1,0 +1,20 @@
+<div class="card  shadow-sm bg-black ">
+  <img [src]=plato.image class="card-img-top">
+  <div class="card-body ">
+      <h5 class="card-title text-white">{{ plato.title }}</h5>
+      <div class="buttons d-flex flex-column">
+      <button type="button" class="btn btn-sm float-end" (click)="event()"
+      [ngClass]="style">
+      {{buttonName}} </button>
+
+        <button mat-button (click)="openDialog()" type="button" class="btn btn-sm btn-primary">
+              See details
+          </button>
+
+<ng-content></ng-content>
+
+          
+
+      </div>
+  </div>
+</div>

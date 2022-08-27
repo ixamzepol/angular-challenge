@@ -1,0 +1,45 @@
+<div class="text-center body h-100">
+  <div class="form-signin w-100 m-auto">
+ 
+      <form (ngSubmit)="logear()" [formGroup]="miFormulario">
+          <img src="https://th.bing.com/th/id/R.e2e055ca0ebc7e59494f97dcf7ee6fac?rik=FkOBmSUg8uDVCQ&pid=ImgRaw&r=0"
+               class="mb-4"
+               width="72"
+               height="57">
+          <h1 class="h3 mb-3 fw-normal">Log In</h1>
+          <div class="alert alert-info">
+          Email: <strong>eve.holt@reqres.in</strong><br/>
+          Password: <strong>cityslicka</strong>
+        </div>
+          <div class="form-floating">
+              <input  type="email"
+                      class="form-control"
+                      id="floatingInuput"
+                      formControlName="email"
+                      placeholder="Email...">
+              <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating">
+              <input  type="password"
+                      class="form-control"
+                      id="floatingPassword"
+                      formControlName="password"
+                      placeholder="Password...">
+              <label for="floatingPassword">Password</label>
+          </div>
+          <button class="btn btn-primary btn-lg w-100"
+                  type="submit"
+                  [disabled]="clicked"
+                  >
+              <span class="spinner-grow spinner-grow-sm" 
+                    role="status" 
+                    aria-hidden="true"
+                    *ngIf="clicked"></span>
+              Log in
+          </button>
+
+      </form>
+
+    </div>
+  
+</div>

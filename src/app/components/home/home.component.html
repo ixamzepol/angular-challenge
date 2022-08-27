@@ -1,0 +1,47 @@
+<body>
+    <ng-template #vacio class="row">
+    <div class="bg-image">
+        <img src="https://th.bing.com/th/id/R.26459a3f83dd56ac433f5c80d3aa97e2?rik=C%2b3K2GNl8pB%2f9g&riu=http%3a%2f%2fwww.freejpg.com.ar%2fimage-900%2fe1%2fe1b6%2fF100011012-bar.jpg&ehk=etfXcUKLDfBxghd9ciRI%2fEfYC05OmluqLMjs6QdbWhw%3d&risl=&pid=ImgRaw&r=0" alt="rest">
+    </div>
+        <div class="col text-center bg-text">
+            <h3 class="text-muted">The dish menu is empty</h3> 
+            <br>
+            <h5 class="text-muted">You can add new items in the search section</h5>   
+        </div>
+    </ng-template>
+    <section class="pt-5 pb-3 text-center container">
+        <div *ngIf="platosGuardados.length > 0; else vacio"class="row py-lg-5">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 col-md-8 mx-auto">
+               
+                <h1 *ngIf="platosGuardados.length > 0">Menu de platos</h1>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div *ngIf="platosGuardados.length > 0" class="mt-5">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"> Total: {{ totalPlatos | currency }} </li>
+                        <li class="list-group-item list-group-item-success"> Promedio de preparacion: {{ promedioTiempo }} </li>
+                        <li class="list-group-item list-group-item-success"> Promedio Health Score: {{ promedioScore }} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <div *ngIf="platosGuardados.length > 0">
+        <div class="album py-5 bg-light bg-gradient">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                    <div class="col" *ngFor="let plato of platosGuardados">    
+
+                        <plate 
+                        [plato]="plato" 
+                        (boton)="borrar($event)" 
+                        [buttonName]="buttonName"
+                        [style]="style"></plate>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
